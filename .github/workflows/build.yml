@@ -1,6 +1,5 @@
+name: Build AI Agent APK
 
-- name: Build Debug APK
-  run: ./gradlew assembleDebug --no-build-cache --no-daemon --stacktrace
 on:
   push:
     branches: [ main ]
@@ -27,9 +26,8 @@ jobs:
       - name: Install NDK
         run: sdkmanager "ndk;25.2.9519653"
 
-      # No caching step – we'll use the Gradle wrapper directly
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --no-build-cache --no-daemon
+        run: ./gradlew assembleDebug --no-build-cache --no-daemon --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
