@@ -33,7 +33,7 @@ jobs:
           rm -rf $HOME/.android/build-cache
 
       - name: Build Debug APK
-        run: ./gradlew assembleDebug --no-build-cache --no-daemon --stacktrace
+        run: ./gradlew clean assembleDebug --info --stacktrace
 
       - name: Upload APK
         uses: actions/upload-artifact@v4
