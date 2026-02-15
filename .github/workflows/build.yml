@@ -1,5 +1,6 @@
-name: Build AI Agent APK
 
+- name: Build Debug APK
+  run: ./gradlew assembleDebug --no-build-cache --no-daemon --stacktrace
 on:
   push:
     branches: [ main ]
