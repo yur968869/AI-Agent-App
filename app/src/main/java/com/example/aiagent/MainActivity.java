@@ -23,6 +23,10 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        startService(new Intent(this, PythonServerService.class));
+
+        commandInput = findViewById(R.id.command_input);
+        sendButton = findViewById(R.id.send_button);
 
         commandInput = findViewById(R.id.command_input);
         sendButton = findViewById(R.id.send_button);
